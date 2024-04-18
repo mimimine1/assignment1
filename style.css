@@ -1,0 +1,68 @@
+.wrapper {
+    width: min( 900px, 100% -3rem);
+    margin-inline: auto;
+}
+
+table {
+    width: 100%;
+  border-collapse: collapse;
+  background: #323232;
+}
+
+caption,
+th,
+td {
+   background-color: rgb(66, 62, 62);
+   color: rgb(190, 186, 186);
+    padding: 1rem;
+}
+
+caption,
+tr {
+    text-align: left;
+}
+
+caption,
+table {
+    text-align: center;
+}
+
+caption {
+    background: hsl(0, 0%, 0%);
+    font-variant-position: 1.5rem;
+    font-variant-position: 700;
+    text-transform: uppercase;
+}
+
+th {
+    background: hsl(0, 1%, 31%);
+}
+
+tr:nth-of-type(2n) {
+    background: hsla(0, 1%, 25%, 0.1);
+}
+
+@media (max-width: 650px) {
+    th {
+        display: none;
+    }
+    td {
+        display: grid;
+        gap: 0.5rem;
+        grid-template-columns: 15ch auto;
+        padding: 0.65rem 1rem;
+    }
+
+    td:first-child {
+        padding-top: 2rem;
+    }
+
+    td:last-child {
+        padding-bottom: 1rem;
+    }
+    td::before {
+        content:attr(data-cell)": ";
+        font-variant-position:700;
+        text-transform: capitalize;
+    }
+}
